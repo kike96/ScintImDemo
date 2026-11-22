@@ -1,0 +1,10 @@
+{
+  "status_updated_utc": "2026-11-22T22:32:08+00:00",
+  "receiver_connected": true,
+  "requested_rate_hz": 5,
+  "latest_completed_source": "f9t_5Hz_20261122T222720Z_0000.ubx",
+  "latest_rawx_time_utc": "2026-11-22T22:30:00+00:00",
+  "last_dashboard_generated_utc": "2026-11-22T22:30:32+00:00",
+  "last_processing_error": null,
+  "note": "Only completed files are displayed. Dashboard is delayed by roughly one file interval."
+}
