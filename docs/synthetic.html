@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f7fb">
+  <meta name="description" content="ScintIm GNSS diagnostics: static synthetic prototype for eventual F9T data.">
+  <title>ScintIm | GNSS diagnostics</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.plot.ly/plotly-4.1.1.min.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="header">
+    <div class="brand"><div class="brand-icon">◎</div><div><div class="eyebrow">SCINTIM · EXPERIMENT 5.0A</div><h1>GNSS observatory</h1></div></div>
+    <div class="header-right"><span class="pill synthetic" id="mode">SYNTHETIC DATA</span><span class="pill" id="refresh-status">Checking snapshot…</span></div>
+  </header>
+  <main class="page">
+    <section class="intro">
+      <div><h2>Satellite signal diagnostics</h2><p>Interactive receiver observables and exploratory ionospheric proxies. This prototype operates entirely on simulated measurements.</p></div>
+      <div class="meta"><span>Station <strong id="station">—</strong></span><span>Last observation <strong id="last-utc">—</strong></span><span>Snapshot age <strong id="age">—</strong></span></div>
+    </section>
+    <div class="alert" role="status" id="notice"><strong>Simulation only.</strong> No GNSS receiver has been connected to this website. Disturbances and phase residuals are illustrative, not calibrated S4 or σφ.</div>
+    <section class="metrics" aria-label="Snapshot summary">
+      <div class="metric"><span class="metric-label">Tracked satellites</span><strong id="metric-sats">—</strong><small>at latest epoch</small></div>
+      <div class="metric"><span class="metric-label">Satellite signals</span><strong id="metric-signals">—</strong><small>at latest epoch</small></div>
+      <div class="metric"><span class="metric-label">Nominal cadence</span><strong id="metric-cadence">—</strong><small>synthetic export</small></div>
+      <div class="metric"><span class="metric-label">Receiver status</span><strong id="metric-status">—</strong><small>not inferred from file age</small></div>
+    </section>
+    <section class="controls" aria-label="Plot filters">
+      <label for="sv">Satellite <select id="sv"></select></label>
+      <label for="signal">Signal <select id="signal"></select></label>
+      <label for="window">Time window <select id="window"><option value="30">30 minutes</option><option value="90" selected>90 minutes</option><option value="120">120 minutes</option></select></label>
+      <button type="button" id="reload">Reload snapshot</button>
+      <span id="filter-caption">All timestamps UTC</span>
+    </section>
+    <section class="charts">
+      <article class="panel"><div class="panel-head"><div><h3>Skyplot</h3><p>Azimuth and elevation · latest epoch</p></div><span class="mini">All satellites</span></div><div id="skyplot" class="plot" role="img" aria-label="Polar skyplot of simulated GNSS satellites"></div></article>
+      <article class="panel"><div class="panel-head"><div><h3>Carrier-to-noise density</h3><p>C/N0 [dB-Hz] · elevation and multipath may dominate</p></div></div><div id="cn0plot" class="plot" role="img" aria-label="C/N0 time series"></div></article>
+      <article class="panel"><div class="panel-head"><div><h3>Carrier phase</h3><p id="phase-description">Illustrative high-pass residual [cycles] · not calibrated σφ</p></div><select id="phase-mode" class="small-select" aria-label="Carrier phase display"><option value="residual" selected>Phase residual</option><option value="relative">Relative raw phase</option></select></div><div id="phaseplot" class="plot" role="img" aria-label="Phase residual time series"></div></article>
+      <article class="panel"><div class="panel-head"><div><h3>Doppler</h3><p>Carrier Doppler [Hz] · line-of-sight dynamics</p></div></div><div id="dopplerplot" class="plot" role="img" aria-label="Doppler time series"></div></article>
+      <article class="panel"><div class="panel-head"><div><h3>Geometry-free carrier phase</h3><p>Relative Δ(L₁ − L₂) [m] · resets across flagged cycle slips; not absolute TEC</p></div></div><div id="gfplot" class="plot" role="img" aria-label="Dual frequency carrier phase change"></div></article>
+      <article class="panel"><div class="panel-head"><div><h3>Receiver health</h3><p>Tracked satellites per epoch · flagged slips</p></div></div><div id="healthplot" class="plot" role="img" aria-label="Receiver health over time"></div></article>
+    </section>
+    <footer><p><strong>ScintIm / TAMBO exploratory prototype.</strong> No receiver locations are published. This page uses a fixed JSON schema so a future F9T decoder can replace the synthetic producer without modifying the plots.</p><p id="snapshot-id">Snapshot —</p></footer>
+  </main>
+</body>
+</html>
