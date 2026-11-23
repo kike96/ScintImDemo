@@ -1,10 +1,10 @@
 {
-  "status_updated_utc": "2026-11-23T04:46:29+00:00",
+  "status_updated_utc": "2026-11-23T04:51:42+00:00",
   "receiver_connected": true,
   "requested_rate_hz": 5,
-  "latest_completed_source": "f9t_5Hz_20261123T044000Z_0075.ubx",
-  "latest_rawx_time_utc": "2026-11-23T04:45:00.209000+00:00",
-  "last_dashboard_generated_utc": "2026-11-23T04:45:22+00:00",
+  "latest_completed_source": "f9t_5Hz_20261123T044500Z_0076.ubx",
+  "latest_rawx_time_utc": "2026-11-23T04:49:59.809000+00:00",
+  "last_dashboard_generated_utc": "2026-11-23T04:50:35+00:00",
   "last_processing_error": null,
   "note": "Only completed files are displayed. Dashboard is delayed by roughly one file interval."
 }
