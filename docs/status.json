@@ -1,10 +1,10 @@
 {
-  "status_updated_utc": "2026-11-23T05:59:24+00:00",
-  "receiver_connected": true,
+  "status_updated_utc": "2026-11-24T01:12:21+00:00",
+  "receiver_connected": false,
   "requested_rate_hz": 5,
-  "latest_completed_source": "f9t_5Hz_20261123T055000Z_0089.ubx",
-  "latest_rawx_time_utc": "2026-11-23T05:54:59.810000+00:00",
-  "last_dashboard_generated_utc": "2026-11-23T05:55:18+00:00",
-  "last_processing_error": null,
+  "latest_completed_source": "f9t_5Hz_20261123T175000Z_0233.ubx",
+  "latest_rawx_time_utc": "2026-11-23T17:50:54.401000+00:00",
+  "last_dashboard_generated_utc": "2026-11-23T17:51:18+00:00",
+  "last_processing_error": "f9t_5Hz_20261123T230239Z_0000.ubx: RuntimeError: No RXM-RAWX messages found",
   "note": "Only completed files are displayed. Dashboard is delayed by roughly one file interval."
 }
